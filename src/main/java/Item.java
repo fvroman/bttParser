@@ -8,6 +8,7 @@ public class Item {
     private String title;
     private String ImageLink;
     private String subcategory;
+    private int price;
     private LinkedHashMap<String, String> features;
 
     Item() {
@@ -50,12 +51,21 @@ public class Item {
         features.put(key, value);
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
                 "title='" + title + '\'' +
                 ", ImageLink='" + ImageLink + '\'' +
                 ", subcategory='" + subcategory + '\'' +
+                ", price=" + price +
                 ", features=" + features +
                 '}';
     }
