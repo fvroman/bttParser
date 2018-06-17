@@ -1,12 +1,18 @@
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class Item {
 
     private String title;
     private String ImageLink;
     private String subcategory;
-    private List<String> features;
-    private String getImageLink;
+    private LinkedHashMap<String, String> features;
+
+    Item() {
+        features = new LinkedHashMap<String, String>();
+    }
 
     public String getTitle() {
         return title;
@@ -32,19 +38,42 @@ public class Item {
         this.subcategory = subcategory;
     }
 
-    public List<String> getFeatures() {
+    public LinkedHashMap<String, String> getFeatures() {
         return features;
     }
 
-    public void setFeatures(List<String> features) {
+    public void setFeatures(LinkedHashMap<String, String> features) {
         this.features = features;
     }
 
-    public String getGetImageLink() {
-        return getImageLink;
+    public void addFeature(String key, String value) {
+        features.put(key, value);
     }
 
-    public void setGetImageLink(String getImageLink) {
-        this.getImageLink = getImageLink;
+    @Override
+    public String toString() {
+        return "Item{" +
+                "title='" + title + '\'' +
+                ", ImageLink='" + ImageLink + '\'' +
+                ", subcategory='" + subcategory + '\'' +
+                ", features=" + features +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Objects.equals(title, item.title) &&
+                Objects.equals(ImageLink, item.ImageLink) &&
+                Objects.equals(subcategory, item.subcategory) &&
+                Objects.equals(features, item.features);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(title, ImageLink, subcategory, features);
     }
 }

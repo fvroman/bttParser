@@ -55,11 +55,12 @@ public class bttParser {
             return null;
         }
         //парсим айтемы в подкатегории
-        Elements itemsLight = subcategory.getElementsByClass("catalog_item");
-        for (Element itemLight: itemsLight) {
+        Elements itemsLight = subcategory.select("section").select("article");
+        for (int i = 0; i < itemsLight.size(); i+=2) {
+            Element itemLight = itemsLight.get(i);
 
             Element refContainer = itemLight.selectFirst("h3");
-            String itemLink = refContainer.select("a").first().attr("abs:href");
+            String itemLink = refContainer.selectFirst("a").attr("abs:href");
             Element image = itemLight.selectFirst("img");
             Element item = new Element("item");
             Document itemFull;
@@ -81,7 +82,7 @@ public class bttParser {
                 items.add(item);
 
             } catch (IOException exception) {
-                System.out.println("Can't parse" + refContainer.ownText());
+                System.out.println("Can't parse" + refContainer.text());
             }
         }
         return items;
