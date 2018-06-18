@@ -9,7 +9,7 @@ public class Main {
         Elements subcategories = parser.getSubcategories();
         List<String> subcategoryLinks = parser.getSubcategoryLinks(subcategories);
         Elements parsedElements = new Elements();
-        for (String link : subcategoryLinks.subList(0,1)) {
+        for (String link : subcategoryLinks) {
            Elements parsedSubcategory = parser.parseSubcategory(link);
             parsedElements.addAll(parsedSubcategory);
         }
@@ -20,6 +20,7 @@ public class Main {
 
             //System.out.println(item);
             //System.out.println(SqlProducer.produceSqlQuery(item));
+
             String query = SqlProducer.produceSqlQuery(item);
             SqlProducer.writeSqlToFile(query, item.getSubcategory());
 

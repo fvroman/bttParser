@@ -16,16 +16,20 @@ class ElementToItemConverter {
          item.setTitle(title);
          //Характеристики
          Elements featureTable = element.getElementsByClass("item_table");
-         Elements tableRows = featureTable.select("tr");
-         for (Element tableRow : tableRows) {
-             String key = tableRow.selectFirst("th").text();
-             String value = tableRow.selectFirst("td").text();
-             item.addFeature(key, value);
+         if (featureTable != null) {
+             Elements tableRows = featureTable.select("tr");
+             for (Element tableRow : tableRows) {
+                 String key = tableRow.selectFirst("th").text();
+                 String value = tableRow.selectFirst("td").text();
+                 item.addFeature(key, value);
+             }
          }
+
          String subcategory = element.select("a").text();
          item.setSubcategory(bttToComfortCategoryMapper.mapCategory(subcategory));
 
-         int price = Integer.parseInt(element.selectFirst("p").text().replaceAll("\\D+",""));
+
+         int price = Integer.parseInt(element.getElementsByClass("price price-item").first().text().replaceAll("\\D+",""));
          item.setPrice(price);
 
          String imageLink = downloadImage(element.selectFirst("img").absUrl("src"), title, subcategory);
