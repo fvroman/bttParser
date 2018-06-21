@@ -9,7 +9,7 @@ public class Main {
         Elements subcategories = parser.getSubcategories();
         List<String> subcategoryLinks = parser.getSubcategoryLinks(subcategories);
         Elements parsedElements = new Elements();
-        for (String link : subcategoryLinks) {
+        for (String link : subcategoryLinks.subList(0,1)) {
            Elements parsedSubcategory = parser.parseSubcategory(link);
             parsedElements.addAll(parsedSubcategory);
         }

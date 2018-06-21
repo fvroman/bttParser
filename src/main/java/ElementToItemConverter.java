@@ -7,7 +7,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 class ElementToItemConverter {
      static Item convertElement(Element element) {
@@ -32,14 +39,16 @@ class ElementToItemConverter {
          int price = Integer.parseInt(element.getElementsByClass("price price-item").first().text().replaceAll("\\D+",""));
          item.setPrice(price);
 
-         String imageLink = downloadImage(element.selectFirst("img").absUrl("src"), title, subcategory);
+         String imageLink = downloadImage(element.selectFirst("img").absUrl("src"), item);
          //Подгружаем фото в соотв. папку
          item.setImageLink(imageLink);
         return item;
     }
 
-    static String downloadImage(String url, String title, String subcategory) {
+    private static String downloadImage(String url, Item item) {
         try {
+            String subcategory = item.getSubcategory();
+            String title = item.getTitle();
          String outputDirectory = "C:\\ComfortImages\\" +bttToComfortCategoryMapper.mapCategory(subcategory);
             String outputPath = outputDirectory + "\\" + title + ".jpg";
             System.out.println("downloading Image " + url + " to " + outputPath);
@@ -56,8 +65,10 @@ class ElementToItemConverter {
             System.out.println("path not found");
         }
 
+
             out.write(resultImageResponse.bodyAsBytes());  // resultImageResponse.body() is where the image's contents are.
             out.close();
+            addToDescription(item, outputDirectory);
             return bttToComfortCategoryMapper.mapCategory(subcategory)+"/"+title+".jpg";
 
         } catch (IOException exception) {
@@ -66,4 +77,31 @@ class ElementToItemConverter {
         }
 
     }
+
+    private static void addToDescription(Item item, String categoryFolder) {
+        try {
+            final Path path = Paths.get(categoryFolder + "/description.txt");
+            String keys="";
+            String values = "";
+            for (Map.Entry<String, String> feature : item.getFeatures().entrySet()) {
+                keys += feature.getKey()+"!!";
+                values += feature.getValue()+"!!";
+            }
+            String text = item.getTitle() + "\t" + keys + "\t" +values+"\t" + item.getTitle() + ".jpg" + "\t" + item.getPrice();
+            if (Files.exists(path)) {
+                Files.write(path, Arrays.asList(text), StandardCharsets.UTF_8,
+                        StandardOpenOption.APPEND);
+            } else {
+                String header = "Наименование\tХарактеристика\tЗначение\tИзображение\tЦена";
+                Files.write(path, Arrays.asList(header,text), StandardCharsets.UTF_8,
+                         StandardOpenOption.CREATE);
+            }
+
+        } catch (final IOException ioe) {
+            System.out.println("can't write description");
+        }
+    }
+
+
+
 }

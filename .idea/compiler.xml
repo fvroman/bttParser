@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="24bttParser" />
+        <module name="_24bttparser" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="24bttParser" target="1.8" />
+      <module name="_24bttparser" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
