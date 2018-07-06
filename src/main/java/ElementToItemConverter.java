@@ -103,21 +103,12 @@ class ElementToItemConverter {
     }
 
     private static int addPrice(int price){
-        int roundedPrice = 0;
+        int roundedPrice;
         float floatPrice = (float) price;
-        if (price < 5000) {
+
             roundedPrice = (int) Math.round(floatPrice + (floatPrice * 0.3));
             roundedPrice =  ((roundedPrice + 99) / 100 ) * 100;
-        } else if (price > 5000 && price<=40000){
-            roundedPrice = (int) Math.round(floatPrice + (floatPrice * 0.25));
-            roundedPrice =  ((roundedPrice + 99) / 100 ) * 100;
-        } else if (price > 40000 && price <=80000) {
-            roundedPrice = (int) Math.round(floatPrice + (floatPrice * 0.2));
-            roundedPrice =  ((roundedPrice + 99) / 100 ) * 100;
-        } else if (price > 80000) {
-            roundedPrice = (int) Math.round(floatPrice + (floatPrice * 0.15));
-            roundedPrice =  ((roundedPrice + 99) / 100 ) * 100;
-        }
+
         return roundedPrice;
 
     }

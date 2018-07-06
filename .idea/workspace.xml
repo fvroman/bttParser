@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf7fc8ea-e8c4-4adf-a52e-5138884310ad" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/24bttParser.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ElementToItemConverter.java" afterPath="$PROJECT_DIR$/src/main/java/ElementToItemConverter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SqlProducer.java" afterPath="$PROJECT_DIR$/src/main/java/SqlProducer.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ElementToItemConverter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Item.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SqlProducer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bttParser.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -68,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElementToItemConverter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ElementToItemConverter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ElementToItemConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="93" column="61" lean-forward="false" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+            <state relative-caret-position="539">
+              <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,9 +99,9 @@
         <option value="$PROJECT_DIR$/src/main/java/bttToComfortCategoryMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/bttParser.java" />
         <option value="$PROJECT_DIR$/.idea/compiler.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ElementToItemConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/SqlProducer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ElementToItemConverter.java" />
       </list>
     </option>
   </component>
@@ -320,7 +308,7 @@
       <workItem from="1529574227110" duration="4174000" />
       <workItem from="1530791793648" duration="57000" />
       <workItem from="1530855584201" duration="217000" />
-      <workItem from="1530876484864" duration="255000" />
+      <workItem from="1530876484864" duration="368000" />
     </task>
     <task id="LOCAL-00001" summary="#AlmostDoneOrSo">
       <created>1529246176044</created>
@@ -336,11 +324,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529317621340</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="#MigratedToMySQL">
+      <created>1530876794948</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530876794948</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10031000" />
+    <option name="totallyTimeSpent" value="10144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -385,7 +380,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#AlmostDoneOrSo" />
     <MESSAGE value="#Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Done" />
+    <MESSAGE value="#MigratedToMySQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="#MigratedToMySQL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -667,10 +663,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ElementToItemConverter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/bttParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="93" column="61" lean-forward="false" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+        <state relative-caret-position="-442">
+          <caret line="53" column="61" lean-forward="false" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -683,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bttParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="53" column="61" lean-forward="false" selection-start-line="53" selection-start-column="53" selection-end-line="53" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -699,10 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ElementToItemConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        <state relative-caret-position="539">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
         </state>
       </provider>
