@@ -82,24 +82,22 @@ class ElementToItemConverter {
     private static void addToDescription(Item item, String categoryFolder) {
         try {
             final Path path = Paths.get(categoryFolder + "/description.txt");
-            String keys = "";
-            String values = "";
+            String characteristic = "";
             for (Map.Entry<String, String> feature : item.getFeatures().entrySet()) {
-                keys += feature.getKey() + "#";
-                values += feature.getValue() + "#";
+                characteristic += feature.getKey() + " - " + feature.getValue() + "#";
             }
-            String text = item.getTitle() + "\t" + keys + "\t" + values + "\t" + "\"Images\\"+item.getTitle() + ".jpg\"" + "\t" + item.getPrice() + " руб.";
+            String text = item.getTitle() + "\t" + characteristic + "\t" + "\"Images\\"+item.getTitle() + ".jpg\"" + "\t" + item.getPrice() + " руб.";
             if (Files.exists(path)) {
-                Files.write(path, Arrays.asList(text), StandardCharsets.UTF_8,
+                Files.write(path, Arrays.asList(text), StandardCharsets.UTF_16,
                         StandardOpenOption.APPEND);
             } else {
-                String header = "Наименование\tХарактеристика\tЗначение\t@Изображение\tЦена";
-                Files.write(path, Arrays.asList(header, text), StandardCharsets.UTF_8,
+                String header = "Наименование\tХарактеристика\t@Изображение\tЦена";
+                Files.write(path, Arrays.asList(header, text), StandardCharsets.UTF_16,
                         StandardOpenOption.CREATE);
             }
 
         } catch (final IOException ioe) {
-            System.out.println("can't write description");
+            System.out.println("can't write description" );
         }
 
     }

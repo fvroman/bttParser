@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class SqlProducer {
     public static String produceSqlQuery(Item item) {
-        String query = "INSERT INTO PRODUCTS VALUES ( product_seq.nextval," + "'"+item.getTitle() + "', " +  item.getPrice()
+        String query = "INSERT INTO PRODUCTS (PRODUCT_NAME, PRICE, SUBCATEGORY, IMAGE_LINK) VALUES ( " + "'"+item.getTitle() + "', " +  item.getPrice()
                 + ", " + "'"+ item.getSubcategory() + "', " +  "'" +item.getImageLink() + "'); \n";
 
         for (Map.Entry<String, String> entry : item.getFeatures().entrySet()) {
-           query +="INSERT INTO FEATURES VALUES (FEATURES_SEQ.nextVal, "
-                   + "'" +entry.getKey() +"', " + "'"+ entry.getValue() + "', " + "PRODUCT_SEQ.currval);\n";
+           query +="INSERT INTO FEATURES (TITLE,VAL,PRODUCT_ID) VALUES ("
+                   + "'" +entry.getKey() +"', " + "'"+ entry.getValue() + "', " + "(SELECT MAX(PRODUCT_ID) FROM PRODUCTS));\n";
         }
 
         return query;
